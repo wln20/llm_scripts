@@ -1,6 +1,6 @@
 """
-Description: Do single-round conversations with several models simultaneously, convenient for comparing multiple models' responses to a same prompt.
-Usage: First fill in the list `model_paths` with the paths of the models, then run: python chat_single_rd.py
+Description: Do sentence completion tasks with several models simultaneously, convenient for comparing multiple models' responses to a same prompt.
+Usage: First fill in the list `model_paths` with the paths of the models, then run: python sentence_completion.py
 """
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
