@@ -2,6 +2,10 @@
 Description: Download hf models.
 Usage: python download_model.py --model_name [MODEL-NAME] --use_auth_token [AUTH-TOKEN]
 """
+import os
+# change the endpoint for file download, especially useful when it's hard to reach `huggingface.co`
+os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+
 import torch
 import argparse
 from transformers import AutoTokenizer, AutoModelForCausalLM
