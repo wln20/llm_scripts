@@ -1,2 +1,2 @@
 # transformers_scripts
-Some scripts I wrote during my learning of transformers. 
+For the study of [transformers](https://github.com/huggingface/transformers).
