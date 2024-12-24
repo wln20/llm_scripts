@@ -1,6 +1,11 @@
 """
 Multi round dialogue with langgraph, support automatic memory and multiprocess conversation
 Reference: https://python.langchain.com/docs/tutorials/chatbot/
+Dependencies:
+```
+pip install langchain-core, langgraph>0.2.27
+pip install -qU langchain-mistralai
+```
 """
 import os
 from langchain_mistralai import ChatMistralAI
