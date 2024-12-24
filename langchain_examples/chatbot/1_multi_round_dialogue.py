@@ -9,7 +9,7 @@ pip install -qU langchain-mistralai
 """
 import os
 from langchain_mistralai import ChatMistralAI
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = "XXX" # TODO
@@ -21,6 +21,7 @@ model = ChatMistralAI(model="mistral-large-latest")
 
 # model.invoke(
 #     [
+#         SystemMessage(content="You're a good assistant"),
 #         HumanMessage(content="Hi! I'm Bob"),
 #         AIMessage(content="Hello Bob! How can I assist you today?"),
 #         HumanMessage(content="What's my name?"),
@@ -28,6 +29,7 @@ model = ChatMistralAI(model="mistral-large-latest")
 # )
 
 input_ctx = []
+# or with system message: input_ctx = [SystemMessage(content="You're a good assistant")]
 while True:
     prompt = input("Human: ")
     if prompt == 'q': 
