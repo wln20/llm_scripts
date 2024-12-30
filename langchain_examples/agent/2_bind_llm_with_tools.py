@@ -50,6 +50,7 @@ print(f"ToolCalls: {response.tool_calls}")
 # Case 2: The model needs to do tool call
 # But, here it's only the model telling us that it wants to use the search engine with an organized query, and it has not really used the tool to do generation yet
 # So, the returned content string is None, but we can see tool calls
+# In the next section of using an agent to generate, we can see that this is the first step for the agent execution.
 message_2 = HumanMessage(content="Who is Luning Wang (Tsinghua)?")
 response = model_with_tools.invoke([message_2])
 
