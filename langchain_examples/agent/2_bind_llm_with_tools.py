@@ -1,5 +1,5 @@
 """
-Combine the LLM and the tool. Here we only shows how to bind the LLM with the tool and let LLM decide what tools to call, without really using the tool to do generation (to do this we need to construct an agent, see in later sections)
+Combine the LLM and the tool. Here we only shows how to bind the LLM with the tool and let LLM propose what tools to call, without really using the tool to do generation (to further generate with the tool's assistance, we need to construct an agent, see in later sections)
 Reference: https://python.langchain.com/docs/tutorials/agents/
 Dependencies:
 ```
