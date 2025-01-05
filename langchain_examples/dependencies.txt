@@ -1,1 +1,5 @@
+# basic
 pip install langchain-core langgraph langchain-mistralai langchain-community
+
+# specific for RAG
+pip install beautifulsoup4
