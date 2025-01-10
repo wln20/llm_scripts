@@ -1,5 +1,8 @@
 # basic
 pip install langchain-core langgraph langchain-mistralai langchain-community
 
+# specific for token-limit settings (use the tokenizer)
+pip install transformers
+
 # specific for RAG
 pip install beautifulsoup4
