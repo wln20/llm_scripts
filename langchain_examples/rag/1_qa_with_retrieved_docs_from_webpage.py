@@ -33,6 +33,7 @@ model = ChatMistralAI(model="mistral-large-latest")
 # ----------------------------------------------------------------------- #
 # Create document loader and load a document
 # Only keep post title, headers, and content from the full HTML.
+# Look for the tags that contain the main contents, put their classes here, and their inner tags would be automatically removed with text kept only.
 target_url = "https://lilianweng.github.io/posts/2023-06-23-agent/"
 bs4_strainer = bs4.SoupStrainer(class_=("post-title", "post-header", "post-content"))
 loader = WebBaseLoader(
