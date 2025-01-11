@@ -1,5 +1,5 @@
 """
-QA with retrieved documents from a webpage (https://lilianweng.github.io/posts/2023-06-23-agent/)
+QA with retrieved documents from a webpage (https://lilianweng.github.io/posts/2023-06-23-agent/), with detailed comments
 Reference: https://python.langchain.com/docs/tutorials/rag/
 """
 import os
@@ -138,10 +138,24 @@ def call_model(state: State):
 # Here we just connect the retrieval and generation steps into a single sequence
 workflow = StateGraph(state_schema=State)
 # Remember that in chatbot, we use `workflow = StateGraph(state_schema=MessageState)`, while here we use our customized State object
+# Join the (virtual) START node with the first node "retrieve"
 workflow.add_edge(START, "retrieve")
+# Add the two nodes to the workflow, and connect them in a sequence
 workflow.add_sequence([retrieve, call_model])
 # Remember that in chatbot, we use `workflow.add_node("model", call_model)`, while here we add two nodes with `workflow.add_sequence([,])`
 app = workflow.compile()
+
+"""
+We could also visualize the graph with:
+`app.get_graph().draw_mermaid_png(output_file_path='./graph.png')`
+
+The graph would look like:
+    _start_
+       |
+    retrieve
+       |
+    call_model
+"""
 
 # ----------------------------------------------------------------------- #
 
